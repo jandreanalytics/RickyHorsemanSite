@@ -1,6 +1,2 @@
-# Video assets - too large for GitHub (use Git LFS or host separately)
-assets/*.mp4
-assets/*.mov
-assets/**/*.mp4
 assets/**/*.mov
 backup/
