@@ -10,7 +10,7 @@ foreach ($video in $videos) {
     Write-Host "Compressing: $($video.Name)"
 
     ffmpeg -y -i "$($video.FullName)" `
-        -c:v libx264 -crf 28 -preset fast `
+        -c:v h264_nvenc -rc vbr -cq 28 -preset p4 `
         -vf "scale=1920:-2" `
         -c:a aac -b:a 96k `
         -movflags +faststart `
