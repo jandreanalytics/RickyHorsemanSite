@@ -275,7 +275,7 @@ function injectSEOSchema() {
     const orgId = `${baseUrl}#organization`;
     const businessId = `${baseUrl}#business`;
     const personId = `${baseUrl}#founder`;
-    const logoUrl = `${baseUrl}/Assets/logo%20just%20icon.png`;
+    const logoUrl = `${baseUrl}/assets/logo%20just%20icon.png`;
 
     const organizationSchema = {
         "@context": "https://schema.org",
@@ -364,7 +364,7 @@ function injectSEOSchema() {
         worksFor: {
             "@id": orgId
         },
-        image: `${baseUrl}/Assets/ricky.png`,
+        image: `${baseUrl}/assets/ricky.png`,
         email: "info@rickyhorseman.com",
         telephone: "+1-703-737-0713",
         sameAs: []
@@ -448,7 +448,7 @@ function injectSEOSchema() {
     const imageSchema = {
         "@context": "https://schema.org",
         "@type": "ImageObject",
-        url: `${baseUrl}/Assets/logo%20just%20icon.png`,
+        url: `${baseUrl}/assets/logo%20just%20icon.png`,
         name: "Ricky Horseman Companies Logo",
         description: "Logo for Ricky Horseman Companies - concrete construction and snow removal services"
     };
