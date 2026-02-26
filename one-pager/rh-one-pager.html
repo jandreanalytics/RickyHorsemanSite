@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricky Horseman · One-Pager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --accent-primary: #8ca744;
+            --accent-secondary: #b7ca64;
+            --accent-muted: #d6dfa6;
+            --slate: #1b1f24;
+            --slate-soft: #232933;
+            --slate-light: #2d343f;
+            --text-light: #f4f7fb;
+            --text-muted: #aeb8c8;
+            --rivet-pattern-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23cdd4dd' fill-opacity='0.09'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            --rivet-pattern-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23333333' fill-opacity='0.08'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--slate);
+            color: var(--text-light);
+            line-height: 1.6;
+            padding: 0.6in;
+            background-image: linear-gradient(135deg, rgba(12, 13, 17, 0.75) 0%, rgba(27, 31, 36, 0.95) 45%, rgba(35, 41, 51, 1) 100%);
+        }
+
+        .page {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: rgba(15, 18, 24, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(120deg, rgba(138, 167, 68, 0.16), transparent 50%);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 1.5in 1.1in 1.1in;
+            background: linear-gradient(110deg, rgba(35, 41, 51, 0.85), rgba(27, 31, 36, 0.95));
+        }
+
+        .hero-copy {
+            max-width: 4.75in;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            font-size: 0.62rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--accent-muted);
+            margin-bottom: 0.6rem;
+        }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.65rem;
+            line-height: 1.15;
+            text-transform: uppercase;
+            margin: 0 0 0.65rem;
+            letter-spacing: 0.06em;
+        }
+
+        .hero-subtext {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.1rem;
+        }
+
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .cta-row a {
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.65rem 1.4rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, background 0.3s ease;
+            font-weight: 600;
+        }
+
+        .cta-row a.primary {
+            background: var(--accent-secondary);
+            color: #1a1f25;
+            border-color: transparent;
+        }
+
+        .cta-row a.secondary {
+            color: var(--accent-secondary);
+        }
+
+        .cta-row a:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(120deg, var(--accent-secondary), var(--accent-primary));
+            color: #0d110f;
+        }
+
+        .hero-media {
+            flex: 1;
+            position: relative;
+            min-height: 3.5in;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-media::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: var(--rivet-pattern-dark);
+            opacity: 0.35;
+        }
+
+        .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        section {
+            padding: 0 1.1in 1.1in;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.75rem;
+        }
+
+        .metric-card {
+            background: var(--slate-soft);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            text-align: center;
+            background-image: linear-gradient(160deg, rgba(255, 255, 255, 0.04), transparent);
+        }
+
+        .metric-card h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.08em;
+        }
+
+        .metric-card p {
+            margin: 0.4rem 0 0;
+            font-size: 0.78rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .section-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--accent-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 0 0 0.4rem;
+        }
+
+        .section-intro {
+            margin: 0 0 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .capabilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.9rem;
+        }
+
+        .capability-card {
+            background: var(--slate-soft);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 1.1rem;
+            min-height: 2.5in;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            background-image: var(--rivet-pattern-dark);
+            background-size: auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capability-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(150deg, rgba(27, 31, 36, 0.9), rgba(27, 31, 36, 0.4), transparent 80%);
+            pointer-events: none;
+        }
+
+        .capability-card h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .capability-card p {
+            margin: 0;
+            color: var(--text-muted);
+            position: relative;
+            z-index: 1;
+        }
+
+        .focus-band {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.9rem;
+            margin-top: 1.1rem;
+        }
+
+        .focus-box {
+            background: linear-gradient(135deg, var(--slate-soft), var(--slate-light));
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 1rem;
+            min-height: 2.2in;
+        }
+
+        .focus-box h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .focus-box ul {
+            margin: 0;
+            padding-left: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.7rem;
+            margin-top: 0.8rem;
+        }
+
+        .process-card {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0.9rem;
+            background: rgba(27, 31, 36, 0.85);
+        }
+
+        .process-card span {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.3em;
+            font-size: 0.75rem;
+            color: var(--accent-secondary);
+            margin-bottom: 0.4rem;
+        }
+
+        .process-card p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            padding: 1.2in 1.1in;
+            background: linear-gradient(120deg, rgba(35, 41, 51, 0.95), rgba(15, 18, 24, 0.9));
+            position: relative;
+        }
+
+        footer::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: var(--rivet-pattern-dark);
+            opacity: 0.2;
+            pointer-events: none;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-content h3 {
+            margin: 0 0 0.5rem;
+            font-size: 1.4rem;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 0.12em;
+        }
+
+        .footer-content p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            text-align: right;
+        }
+
+        .contact-actions a {
+            color: var(--text-light);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                background: #111;
+            }
+            .page {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="hero-copy">
+                <div class="eyebrow">Concrete + Snow | DMK + Ricky Horseman</div>
+                <h1>Concrete precision. Winter readiness. One partner.</h1>
+                <p class="hero-subtext">Structural packages, specialty flatwork, and mission-critical snow response covering municipal, institutional, and private campuses across the Northeast.</p>
+                <div class="cta-row">
+                    <a href="#contact" class="primary">Schedule a build</a>
+                    <a href="#contact" class="secondary">Lock snow coverage</a>
+                </div>
+            </div>
+            <div class="hero-media" aria-hidden="true">
+                <img src="../Assets/ricky.png" alt="Ricky Horseman crew in the field">
+            </div>
+        </header>
+
+        <section>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <h3>4M+ SF</h3>
+                    <p>recent flatwork</p>
+                </div>
+                <div class="metric-card">
+                    <h3>32 CAMPUSES</h3>
+                    <p>snow contracts</p>
+                </div>
+                <div class="metric-card">
+                    <h3>24/7</h3>
+                    <p>dispatch + salt</p>
+                </div>
+                <div class="metric-card">
+                    <h3>30+ YEARS</h3>
+                    <p>self-performed</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-label">Core capabilities</div>
+            <h2>Concrete + operations coverage</h2>
+            <p class="section-intro">Turnkey crews, owned fleet, and coordinated planning keep every pour on schedule and every campus open when winter closes in.</p>
+
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <h3>Structural concrete</h3>
+                    <p>Elevated decks, shear walls, and mat slabs delivered with in-house form, pump, and finish crews to de-risk schedule-critical packages.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Precision flatwork</h3>
+                    <p>Laser-screeded slabs, freezer floors, and sport courts tuned for coatings, refrigeration, or heavy equipment traffic.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Site concrete</h3>
+                    <p>Walkways, loading docks, retaining systems, ADA upgrades, and exterior hardscape that tie seamlessly into broader site scopes.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Snow & ice command</h3>
+                    <p>Dedicated plow, loader, and sidewalk teams paired with GPS dispatch, on-site salt inventory, and post-storm reporting.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Seasonal facility care</h3>
+                    <p>Rapid switchover to spring remediation—joint sealing, crack repair, concrete patching, and grounds stabilization.</p>
+                </div>
+                <div class="capability-card">
+                    <h3>Emergency response</h3>
+                    <p>On-call crews for heaved slabs, curb strikes, spalled steps, or urgent structural remediation before occupancy is impacted.</p>
+                </div>
+            </div>
+
+            <div class="focus-band">
+                <div class="focus-box">
+                    <h3>Concrete focus</h3>
+                    <ul>
+                        <li>Structural packages for data centers, municipal builds, and private development</li>
+                        <li>Interior/exterior flatwork with precision tolerances</li>
+                        <li>Specialty surfaces: sport courts, freezer, and food-grade floors</li>
+                    </ul>
+                </div>
+                <div class="focus-box">
+                    <h3>Snow + operations</h3>
+                    <ul>
+                        <li>Route modeling, weather intelligence, and automated salt tracking</li>
+                        <li>24/7 dispatch with loaders, plows, skid steers, and sidewalk teams</li>
+                        <li>After-action documentation for risk managers and owners</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-label">How we deliver</div>
+            <h2>Plan, mobilize, prove</h2>
+            <p class="section-intro">DMK Project Solutions and Ricky Horseman synchronize preconstruction, fleet, and reporting so owners gain one accountable partner year-round.</p>
+            <div class="process-grid">
+                <div class="process-card">
+                    <span>01</span>
+                    <p>Scope modeling, pour sequencing, and storm routing locked before mobilization.</p>
+                </div>
+                <div class="process-card">
+                    <span>02</span>
+                    <p>Owned equipment, in-yard materials, and veteran crews keep field execution predictable.</p>
+                </div>
+                <div class="process-card">
+                    <span>03</span>
+                    <p>After-action packages with photos, timestamps, and material data keep teams audit-ready.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <div class="footer-content">
+                <div>
+                    <div class="section-label">Next step</div>
+                    <h3>Stage the next pour & lock snow coverage</h3>
+                    <p>We can phase structural starts, coordinate capital improvements, and finalize seasonal protection in a single conversation.</p>
+                </div>
+                <div class="contact-actions">
+                    <a href="mailto:info@dmkprojects.com">info@dmkprojects.com</a>
+                    <a href="tel:17325550177">732 · 555 · 0177</a>
+                    <a href="https://dmkprojects.com" target="_blank" rel="noopener">dmkprojects.com</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

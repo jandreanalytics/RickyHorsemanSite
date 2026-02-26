@@ -1,0 +1,6 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Geometric pin with subtle curves -->
+  <path fill="#1a1a1a" d="M24 48L34 28C37 22 38 16 38 12C38 6.477 33.627 2 24 2C14.373 2 10 6.477 10 12C10 16 11 22 14 28L24 48Z"/>
+  <!-- Center circle -->
+  <circle cx="24" cy="14" r="3.5" fill="#ffffff"/>
+</svg>
