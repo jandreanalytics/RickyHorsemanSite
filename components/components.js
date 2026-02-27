@@ -300,7 +300,7 @@ function injectSEOSchema() {
         image: logoUrl,
         url: baseUrl,
         telephone: "+1-703-737-0713",
-        email: "info@rickyhorseman.com",
+        email: "info@rickyhorsemancompanies.com",
         description: "Professional concrete construction, snow removal services, and data center site services for Northern Virginia. Specializing in concrete foundations, flatwork, snow removal contracts, and critical facility support.",
         address: {
             "@type": "PostalAddress",
@@ -365,7 +365,7 @@ function injectSEOSchema() {
             "@id": orgId
         },
         image: `${baseUrl}/assets/ricky.png`,
-        email: "info@rickyhorseman.com",
+        email: "info@rickyhorsemancompanies.com",
         telephone: "+1-703-737-0713",
         sameAs: []
     };
@@ -417,7 +417,7 @@ function injectSEOSchema() {
         description: "Professional concrete construction, snow removal services, and data center site services",
         url: baseUrl,
         telephone: "+1-703-737-0713",
-        email: "info@rickyhorseman.com",
+        email: "info@rickyhorsemancompanies.com",
         address: {
             "@type": "PostalAddress",
             streetAddress: "318 South St SE",
@@ -473,7 +473,7 @@ function injectSEOSchema() {
         "@type": "ContactPoint",
         contactType: "Customer Service",
         telephone: "+1-703-737-0713",
-        email: "info@rickyhorseman.com",
+        email: "info@rickyhorsemancompanies.com",
         areaServed: "Northern Virginia",
         availableLanguage: "en"
     };
@@ -512,7 +512,7 @@ function injectSEOSchema() {
             longitude: loc.coords.lng
         },
         telephone: "+1-703-737-0713",
-        email: "info@rickyhorseman.com",
+        email: "info@rickyhorsemancompanies.com",
         url: baseUrl,
         areaServed: loc.location
     }));
