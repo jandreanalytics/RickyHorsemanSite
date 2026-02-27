@@ -3411,7 +3411,8 @@ a:hover {
     .hero {
         height: auto;
         min-height: 360px;
-        margin-top: 50px !important;
+        margin-top: 0 !important;
+        padding-top: 50px;
     }
 
     .hero-video {
