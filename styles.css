@@ -1335,6 +1335,15 @@ img {
     transition: color 0.3s ease;
 }
 
+.project-location {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888888;
+    margin: 0;
+}
+
 .project-card:hover .project-title {
     color: var(--accent-secondary);
 }
@@ -1347,6 +1356,10 @@ img {
 }
 
 /* Slate background sections (odd) - white text */
+.projects-section:nth-child(even) .project-title {
+    color: #1d1d1d;
+}
+
 .projects-section:nth-child(odd) .project-title {
     color: #ffffff;
 }
@@ -3911,6 +3924,10 @@ a:hover {
 /* Services Page Hero Video - Flipped */
 .services-hero-video {
     transform: scaleX(-1) !important;
+}
+
+.sport-hero-video {
+    transform: none !important;
 }
 
 /* Site Property Services CTA Video Flip */

@@ -15,8 +15,8 @@
 
     <main id="home">
         <section class="hero" id="hero">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="assets/7bd9accc83.mp4" type="video/mp4">
+            <video class="hero-video sport-hero-video" id="sport-hero-video" autoplay muted playsinline>
+                <source src="assets/projects/ourprojects/Untitled design.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="hero-video-overlay"></div>
@@ -40,7 +40,7 @@
                 <div class="service-grid">
                     <div class="service-card">
                         <div class="service-card-image">
-                            <img src="https://images.unsplash.com/photo-1765605898805-86923208c52b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Backyard Sport Courts" loading="lazy">
+                            <img src="assets/projects/image.png" alt="Backyard sport court installation" loading="lazy">
                         </div>
                         <h3 class="service-card-title">Backyard Sport Courts</h3>
                         <p class="service-card-text">Create a multi-purpose play area with a durable concrete court surface. Perfect for basketball, pickleball, tennis, or casual recreational play, our courts are built with proper slope for drainage, finished smooth and level, and ready for paint or specialty coating. We work with you on court dimensions, sport-specific markings, and surface options to fit your space and budget.</p>
@@ -48,7 +48,7 @@
 
                     <div class="service-card">
                         <div class="service-card-image">
-                            <img src="https://images.unsplash.com/photo-1596006251131-fab018538a16?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Polished Concrete Surfaces" loading="lazy">
+                            <img src="assets/projects/pool decks/image.png" alt="Polished indoor-outdoor concrete surface" loading="lazy">
                         </div>
                         <h3 class="service-card-title">Polished Concrete Surfaces</h3>
                         <p class="service-card-text">Polished concrete offers a modern, durable finish ideal for indoor spaces, covered areas, or high-end residential applications. The process reveals the natural stone aggregate and creates a sleek, low-maintenance surface that's easy to clean and visually striking.</p>
@@ -56,7 +56,7 @@
 
                     <div class="service-card">
                         <div class="service-card-image">
-                            <img src="https://images.unsplash.com/photo-1555980414-8317bbc6b54b?q=80&w=1026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Specialty Sport Coatings" loading="lazy">
+                            <img src="assets/projects/pool decks/sportcoatings.png" alt="Specialty sport coating application" loading="lazy">
                         </div>
                         <h3 class="service-card-title">Specialty Sport Coatings</h3>
                         <p class="service-card-text">Beyond the concrete base, we can discuss specialty surface coatings designed to improve traction, reduce glare, and enhance performance for your chosen sport. These coatings add durability and are engineered to withstand heavy use.</p>
@@ -64,7 +64,7 @@
 
                     <div class="service-card">
                         <div class="service-card-image">
-                            <img src="https://images.unsplash.com/photo-1704747885537-99df83ca963f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Multi-Purpose Play Areas" loading="lazy">
+                            <img src="assets/projects/pool decks/0fec3fd3-2f06-456e-91a0-a323fe801b8e.jpg" alt="Multi-purpose outdoor living patio" loading="lazy">
                         </div>
                         <h3 class="service-card-title">Multi-Purpose Play Areas</h3>
                         <p class="service-card-text">Need flexibility? We design concrete surfaces that work for multiple activities—court play, gathering space, recreational activities. Maximize your property's usefulness with a surface built to perform in any season.</p>
@@ -256,7 +256,31 @@
 
     <script src="components/components.js"></script>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        const yearEl = document.getElementById('year');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+
+        // Limit sport hero video playback to first 12 seconds
+        const sportHeroVideo = document.getElementById('sport-hero-video');
+        const HERO_MAX_DURATION = 12;
+        const HERO_PLAYBACK_RATE = 0.8;
+        if (sportHeroVideo) {
+            const applyHeroPlaybackRate = () => {
+                sportHeroVideo.playbackRate = HERO_PLAYBACK_RATE;
+            };
+
+            // Apply playback rate once metadata is available
+            sportHeroVideo.addEventListener('loadedmetadata', applyHeroPlaybackRate, { once: true });
+
+            sportHeroVideo.addEventListener('timeupdate', () => {
+                if (sportHeroVideo.currentTime >= HERO_MAX_DURATION) {
+                    sportHeroVideo.currentTime = 0;
+                    sportHeroVideo.play();
+                    applyHeroPlaybackRate();
+                }
+            });
+        }
 
         // FAQ accordion functionality
         const faqToggles = document.querySelectorAll('.faq-toggle');
