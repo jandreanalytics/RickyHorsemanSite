@@ -304,10 +304,10 @@ function injectSEOSchema() {
         description: "Professional concrete construction, snow removal services, and data center site services for Northern Virginia. Specializing in concrete foundations, flatwork, snow removal contracts, and critical facility support.",
         address: {
             "@type": "PostalAddress",
-            streetAddress: "318 South St SE",
+            streetAddress: "PO Box 4181",
             addressLocality: "Leesburg",
             addressRegion: "VA",
-            postalCode: "20175",
+            postalCode: "20177",
             addressCountry: "US"
         },
         geo: {
@@ -420,10 +420,10 @@ function injectSEOSchema() {
         email: "info@rickyhorsemancompanies.com",
         address: {
             "@type": "PostalAddress",
-            streetAddress: "318 South St SE",
+            streetAddress: "PO Box 4181",
             addressLocality: "Leesburg",
             addressRegion: "VA",
-            postalCode: "20175",
+            postalCode: "20177",
             addressCountry: "US"
         },
         areaServed: [
@@ -501,9 +501,10 @@ function injectSEOSchema() {
         description: `Concrete construction, snow removal, and data center services in ${loc.location}`,
         address: {
             "@type": "PostalAddress",
-            streetAddress: "318 South St SE",
+            streetAddress: "PO Box 4181",
             addressLocality: loc.location.split(",")[0],
             addressRegion: "VA",
+            postalCode: "20177",
             addressCountry: "US"
         },
         geo: {
