@@ -1917,10 +1917,37 @@ img {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 10px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .quote-submit-btn:hover {
     background-color: #c4a85a;
+}
+
+.quote-submit-btn:focus-visible,
+.quote-submit-btn:active {
+    background-color: #c4a85a;
+    color: #1a1a1a;
+    outline: 2px solid #1a1a1a;
+    outline-offset: 3px;
+}
+
+.form-response {
+    font-size: 13px;
+    margin: 10px 0 0;
+    min-height: 18px;
+}
+
+.form-response[data-state="info"] {
+    color: #5c5c5c;
+}
+
+.form-response[data-state="success"] {
+    color: #1d502b;
+}
+
+.form-response[data-state="error"] {
+    color: #b03030;
 }
 
 .privacy-notice {

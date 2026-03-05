@@ -20,6 +20,7 @@
                 Your browser does not support the video tag.
             </video>
             <div class="hero-video-overlay"></div>
+            <div class="hero-overlay"></div>
             <div class="hero-content">
                 <h2 class="hero-title">Get a Quote</h2>
                 <p class="hero-subtitle">Tell us a little about your project and we'll follow up to talk through options, timing, and pricing. We handle concrete work for residential patios, driveways, and walks as well as commercial slabs, equipment pads, site prep, and facility services across Leesburg and Northern Virginia. There's no obligation—this just starts the conversation.</p>
@@ -35,7 +36,6 @@
                 <div class="quote-content">
                     <div class="quote-form-wrapper">
                         <form class="quote-form" id="quoteForm" name="quote" method="POST" action="https://usebasin.com/f/7d581fa1ead6">
-                            <input type="hidden" name="redirect" value="https://rickyhorseman.com/quote-success.html">
                             <!-- Honeypot fields for spam protection -->
                             <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none;">
                             <div style="display: none;">
@@ -116,6 +116,8 @@
 
                             <button type="submit" class="quote-submit-btn">Send My Project Details</button>
 
+                            <p class="form-response" id="quote-form-response" role="status" aria-live="polite"></p>
+
                             <p class="privacy-notice">We don't share your information with third parties. Your details are only used to respond to your request and prepare your quote.</p>
                         </form>
                     </div>
@@ -140,14 +142,14 @@
                         <div class="quote-service-areas">
                             <h3>Service Areas</h3>
                             <div class="service-areas-grid">
-                                <span class="service-area-tag">Leesburg</span>
-                                <span class="service-area-tag">Loudoun County</span>
-                                <span class="service-area-tag">Ashburn</span>
-                                <span class="service-area-tag">Sterling</span>
+                                <span class="service-area-tag">Ashburn & Loudoun County</span>
+                                <span class="service-area-tag">Sterling & Dulles Corridor</span>
                                 <span class="service-area-tag">Purcellville</span>
                                 <span class="service-area-tag">Middleburg</span>
                                 <span class="service-area-tag">Hamilton</span>
                                 <span class="service-area-tag">Lovettsville</span>
+                                <span class="service-area-tag">Leesburg</span>
+                                <span class="service-area-tag">Broadlands / Brambleton</span>
                                 <span class="service-area-tag">Northern Virginia</span>
                             </div>
                         </div>
@@ -155,8 +157,7 @@
                         <div class="quote-sectors-block">
                             <h3>Sectors Served</h3>
                             <div class="sectors-grid">
-                                <span class="sector-tag">Residential</span>
-                                <span class="sector-tag">Commercial</span>
+                                <span class="sector-tag">Commercial Facilities</span>
                                 <span class="sector-tag">Data Centers</span>
                                 <span class="sector-tag">Facility Management</span>
                                 <span class="sector-tag">Sport Courts</span>
@@ -165,8 +166,9 @@
                                 <span class="sector-tag">Site Preparation</span>
                                 <span class="sector-tag">Property Services</span>
                                 <span class="sector-tag">Seasonal Support</span>
-                                <span class="sector-tag">Snow Plowing</span>
-                                <span class="sector-tag">Ice Removal</span>
+                                <span class="sector-tag">Snow & Ice Management</span>
+                                <span class="sector-tag">Residential Projects</span>
+                                <span class="sector-tag">Backyard Living</span>
                             </div>
                         </div>
                     </div>
@@ -178,6 +180,48 @@
     <div id="footer-placeholder"></div>
 
     <script src="components/components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const quoteForm = document.getElementById('quoteForm');
+            const responseEl = document.getElementById('quote-form-response');
+
+            if (!quoteForm || !responseEl) {
+                return;
+            }
+
+            const setStatus = (message, type = 'info') => {
+                responseEl.textContent = message;
+                responseEl.dataset.state = type;
+            };
+
+            quoteForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+                setStatus('Sending your project details...', 'info');
+
+                const formData = new FormData(quoteForm);
+
+                try {
+                    const response = await fetch(quoteForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        setStatus('Thanks! We received your project details and will reach out shortly.', 'success');
+                        quoteForm.reset();
+                    } else {
+                        throw new Error('Submission failed');
+                    }
+                } catch (error) {
+                    console.error('Quote form submission error:', error);
+                    setStatus('We could not send your request. Please try again or call us at (703) 737-0713.', 'error');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
 
