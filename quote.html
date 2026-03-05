@@ -250,8 +250,6 @@
 
                             <button type="submit" class="quote-submit-btn">Send My Project Details</button>
 
-                            <p class="form-response" id="quote-form-response" role="status" aria-live="polite"></p>
-
                             <p class="privacy-notice">We don't share your information with third parties. Your details are only used to respond to your request and prepare your quote.</p>
                         </form>
                     </div>
@@ -314,58 +312,6 @@
     <div id="footer-placeholder"></div>
 
     <script src="components/components.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const quoteForm = document.getElementById('quoteForm');
-            const responseEl = document.getElementById('quote-form-response');
-            const WEB3_ENDPOINT = 'https://api.web3forms.com/submit';
-            const SUCCESS_REDIRECT = 'quote-success.html';
-
-            if (!quoteForm) {
-                return;
-            }
-
-            const updateStatus = (message, type = 'info') => {
-                if (!responseEl) return;
-                responseEl.textContent = message;
-                responseEl.style.color = type === 'error' ? '#c0392b' : '#1d502b';
-            };
-
-            quoteForm.addEventListener('submit', async (event) => {
-                event.preventDefault();
-                updateStatus('Sending your project details...', 'info');
-
-                const formData = new FormData(quoteForm);
-                const payload = Object.fromEntries(formData.entries());
-
-                try {
-                    const response = await fetch(WEB3_ENDPOINT, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Accept': 'application/json'
-                        },
-                        body: JSON.stringify(payload)
-                    });
-
-                    const result = await response.json();
-
-                    if (result.success) {
-                        updateStatus('Thanks! We received your project details and will reach out shortly.');
-                        quoteForm.reset();
-                        if (SUCCESS_REDIRECT) {
-                            window.location.href = SUCCESS_REDIRECT;
-                        }
-                    } else {
-                        throw new Error(result.message || 'Submission failed');
-                    }
-                } catch (error) {
-                    console.error('Quote form submission error:', error);
-                    updateStatus('We could not send your request. Please try again or call us at (703) 737-0713.', 'error');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
 
