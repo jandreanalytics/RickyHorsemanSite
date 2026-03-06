@@ -1494,7 +1494,7 @@ img {
 }
 
 .service-card-image--site-prep img {
-    object-position: top;
+    object-position: center 30%;
 }
 
 .service-card-title {
