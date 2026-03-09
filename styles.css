@@ -5429,6 +5429,7 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 24px;
     padding-bottom: 16px;
 }
 
@@ -5438,6 +5439,14 @@ a:hover {
     opacity: 0.85;
     filter: brightness(0) invert(1);
     transition: opacity 0.2s ease;
+}
+
+.footer-afcom img.loudoun {
+    max-height: 40px;
+}
+
+.footer-afcom img.bbb {
+    max-height: 70px;
 }
 
 .footer-afcom img:hover {
