@@ -23,7 +23,7 @@
     { match: /^\/site-property-services\/?$/, label: "Request Site Services", project: "Site Services" },
     { match: /^\/seasonal-facility-support\/?$/, label: "Get Snow Service Quote", project: "Snow Removal" },
     { match: /^\/data-centers\/?$/, label: "Request Data Center Quote", project: "Data Centers" },
-    { match: /^\/landscaping\/?$/, label: "Request Emergency Response", project: "Emergency Response" },
+    { match: /^\/emergency-services\/?$/, label: "Request Emergency Response", project: "Emergency Response" },
     { match: /^\/services\/?$/, label: "Start Your Project", project: "Services" },
     { match: /^\/projects\/?$/, label: "View Our Work", project: "Projects" },
     { match: /^\/about\/?$/, label: "Let's Talk", project: "About" },
