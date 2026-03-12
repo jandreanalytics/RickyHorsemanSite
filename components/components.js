@@ -287,7 +287,7 @@ function injectSEOSchema() {
         contactPoint: {
             "@type": "ContactPoint",
             contactType: "customer service",
-            telephone: "+1-000-000-0000",
+            telephone: "+1-833-388-9882",
             areaServed: "US"
         }
     };
@@ -299,7 +299,7 @@ function injectSEOSchema() {
         name: "Ricky Horseman Companies",
         image: logoUrl,
         url: baseUrl,
-        telephone: "+1-703-737-0713",
+        telephone: "+1-833-388-9882",
         email: "info@rickyhorsemancompanies.com",
         description: "Professional concrete construction, snow removal services, and data center site services for Northern Virginia. Specializing in concrete foundations, flatwork, snow removal contracts, and critical facility support.",
         address: {
@@ -366,7 +366,7 @@ function injectSEOSchema() {
         },
         image: `${baseUrl}/assets/ricky.png`,
         email: "info@rickyhorsemancompanies.com",
-        telephone: "+1-703-737-0713",
+        telephone: "+1-833-388-9882",
         sameAs: []
     };
 
@@ -416,7 +416,7 @@ function injectSEOSchema() {
         name: "Ricky Horseman Companies",
         description: "Professional concrete construction, snow removal services, and data center site services",
         url: baseUrl,
-        telephone: "+1-703-737-0713",
+        telephone: "+1-833-388-9882",
         email: "info@rickyhorsemancompanies.com",
         address: {
             "@type": "PostalAddress",
@@ -472,7 +472,7 @@ function injectSEOSchema() {
         "@context": "https://schema.org",
         "@type": "ContactPoint",
         contactType: "Customer Service",
-        telephone: "+1-703-737-0713",
+        telephone: "+1-833-388-9882",
         email: "info@rickyhorsemancompanies.com",
         areaServed: "Northern Virginia",
         availableLanguage: "en"
@@ -512,7 +512,7 @@ function injectSEOSchema() {
             latitude: loc.coords.lat,
             longitude: loc.coords.lng
         },
-        telephone: "+1-703-737-0713",
+        telephone: "+1-833-388-9882",
         email: "info@rickyhorsemancompanies.com",
         url: baseUrl,
         areaServed: loc.location
